@@ -46,27 +46,27 @@ List of actions to setup.
 Bellow is detailed install instructions.
 Assuming `python 2.7` and `npm` is installed.
 
-1. $ `cd to-project-directory`
-1. $ `sudo pip install virtualenv`
-2. $ `virtualenv -p /usr/bin/python venv`
+- $ `cd to-project-directory`
+- $ `sudo pip install virtualenv`
+- $ `virtualenv -p /usr/bin/python venv`
 
 Or replace `/usr/bin/python` with the path of python2.7 binary.
 This command will create a virutal environment in `venv` directory.
 
-3. $ `. venv/bin/activate`
+- $ `. venv/bin/activate`
 
 Notice bash indicates it's in virtual environment `(venv)`
 
-4. $ `python setup.py install`
+- $ `python setup.py install`
 
 Installs all web server dependencies in `venv`.
 Make sure see success message like `Finished processing dependencies`.
 
-5. $ `npm install`
+- $ `npm install`
 
 This command should install all required client side dependencies in `static/bower_components`.
 
-6. Write `config.py` file in projects directory,
+- Write `config.py` file in projects directory,
    You can copy `config-sample.py` to `config.py`.
    And modify `DBCONFIG` and `SESSION_SECRET`.
 
@@ -77,12 +77,13 @@ import os
 os.urandom(24)
 ```
 
-7.  $ `export FLASK_APP=bucketlistapp.py`
+-  $ `export FLASK_APP=bucketlistapp.py`
 
 Set Flask app envrinoment variable
 
-8. $ `flask run`
+- $ `flask run`
 
 Starts the server at port 5000. If you see no error, Web app is running there.
 
 http://localhost:5000/
+
