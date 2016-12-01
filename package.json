@@ -1,0 +1,14 @@
+{
+  "name": "bucketlistapp-spa",
+  "private": true,
+  "version": "0.0.1",
+  "description": "The bucket list web app made with flask and angularjs",
+  "repository": "https://github.com/__FILL__",
+  "license": "GPL-2",
+  "devDependencies": {
+    "bower": "^1.7.7"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+  }
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" ng-app="bucketlistApp">
+  <head>
+    <meta charset="utf-8">
+    <title>My Bucket List</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.css" />
+    <script src="bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.js"></script>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="app.css" />
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="gui.controller.js"></script>
+    <script src="gui.service.js"></script>
+    <script src="user.service.js"></script>
+    <script src="login.component.js"></script>
+    <script src="header.component.js"></script>
+    <script src="dashboard.component.js"></script>
+    <script src="todo-manage.component.js"></script>
+    <script src="todo-edit.component.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <div class="view-container">
+      <div ng-view class="view-frame"><h3 class="panel-body" style="text-align:center;">Loading...</h3></div>
+    </div>
+
+    <div ng-controller="GUIGlobal">
+      <!-- main popup -->
+      <div class="modal fade" tabindex="-1" role="dialog" ng-click="mainpopup.onDismissed($event)">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" ng-click="mainpopup.onClose()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">{{ mainpopup.title }}</h4>
+            </div>
+            <div class="modal-body">
+              {{ mainpopup.body }}
+            </div>
+            <div class="modal-footer">
+              <button ng-if="mainpopup.hasclose" type="button" class="btn btn-default" ng-click="mainpopup.onClose()">{{ mainpopup.closelabel }}</button>
+              <button ng-repeat="button in mainpopup.buttons" type="button"
+                      ng-class="['btn', 'btn-' + button.btntype]"
+                      ng-click="button.onClick($event)">{{ button.label }}</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+      <!-- progress blocker -->
+      <div class="pb-blocker" ng-style="{display:processblocker.blocking ? 'block' : 'none'}" ng-class="{active:processblocker.fadeIn}">
+        <div class="pb-view">
+          <div class="pb-icon-container">
+            <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+          </div>
+          <div class="pb-message">
+            {{ processblocker.message }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<div class="container content-container">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-3">
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-3">
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-4">
+      <select class="form-control" name="limit" id="limit" ng-model="$ctrl._limit" ng-change="$ctrl.onLimitChange()" ng-options="item as item.label for item in $ctrl.limits track by item.value">
+      </select>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-2">
+      <div class="pull-right mtbl-loading" ng-class="{active:$ctrl.loading}">
+        <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+      </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-lg-12">
+    <table ng-if="$ctrl.items.length > 0" class="table table-striped">
+      <thead>
+        <tr>
+          <th ng-repeat="field in $ctrl.fields">{{ field.label }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in $ctrl.items">
+          <td ng-repeat="field in $ctrl.fields" ng-switch="field.type" ng-class="{fit:field.fit,textcenter:field.textcenter}">
+            <span ng-switch-when="IMAGE"><img ng-if="item[field.key]" class="mtbl-img-responsive" src="{{ item[field.key] }}" /></span>
+            <span ng-switch-when="TEXT">{{ item[field.key] }}</span>
+            <button ng-switch-when="BUTTON" type="button"
+                    ng-click="field.onClick(item, $event)"
+                    ng-attr-title="field.hidetitle ? field.title : ''"
+                    ng-class="['btn', 'btn-' + field.btntype]">
+              <i ng-class="['fa', 'fa-' + field.fa_icon]"></i>
+              <span ng-if="!field.hidetitle">{{ field.title }}</span>
+            </button>
+            <input ng-switch-when="CHECKBOX" type="checkbox" ng-name="item.id + '-checked'" ng-model="item[field.key]" ng-change="field.onChange(item)" ng-attr-title="field.title" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <nav ng-if="$ctrl.pagesList.length > 1" class="paging-nav">
+        <a ng-if="$ctrl.offset > 0" class="previous" href="{{$ctrl.pageRoutePrefix + $ctrl.mkItemsScroll($ctrl.offset - $ctrl.limit)}}">Previous</a>
+        <span ng-if="$ctrl.hasMoreLeft" class="more">...</span>
+        <a ng-repeat="page in $ctrl.pagesList" href="{{$ctrl.pageRoutePrefix + $ctrl.mkItemsScroll((page - 1) * $ctrl.limit)}}" ng-class="{active:$ctrl.itemsScroll==$ctrl.mkItemsScroll((page - 1) * $ctrl.limit)}">{{ page }}</a>
+        <span ng-if="$ctrl.hasMoreRight" class="more">...</span>
+        <a ng-if="$ctrl.offset + $ctrl.items.length < $ctrl.count" class="next" href="{{$ctrl.pageRoutePrefix + $ctrl.mkItemsScroll($ctrl.offset + $ctrl.limit)}}">Next</a>
+      </nav>
+    </div>
+  </div>
+</div>  
+</div>

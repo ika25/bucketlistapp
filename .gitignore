@@ -1,0 +1,16 @@
+**/__pycache__/
+**/*.pyc
+bucketlistapp.egg-info/
+build/
+dist/
+venv/
+config.py
+pscripts/
+
+# spa part
+logs/*
+node_modules/
+tmp
+.idea
+.DS_Store
+bower_components/

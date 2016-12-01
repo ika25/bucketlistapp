@@ -1,0 +1,215 @@
+/* generic */
+.mtop5 { margin-top: 5px; }
+.mtop10 { margin-top: 10px; }
+.mtop15 { margin-top: 15px; }
+@media (max-width: 767px) {
+  .xmtop10 { margin-top: 10px; }
+  .xmtop15 { margin-top: 15px; }
+  .xwp-5 { width: 25%; }
+  .xmh15 { margin-left: 15px; margin-right: 15px; }
+}
+@media (max-width: 500px) {
+  .xwp-5 { width: 40%; }
+}
+.textcenter {
+  text-align: center;
+}
+/* bootstrap extra */
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+
+/* login */
+input.ng-invalid:not(.ng-untouched) {
+  border-left: #e11 3px solid;
+}
+
+
+
+/* app */
+.mnav {
+  padding: 5px;
+  /* border-bottom: 1px solid darkgrey; */
+}
+
+.mnav > a {
+  display: inline-block;
+  padding: 10px;
+  margin: 0px 2px;
+}
+
+.mnav > a.active {
+  background-color: white;
+  border-radius: 5px;
+}
+@media (max-width: 767px) {
+  .mnav > a {
+    display: block;
+  }
+}
+.content-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* progress blocker */
+.pb-blocker {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1100;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, .3);
+  -webkit-transition-property: opacity;
+  -webkit-transition-duration:0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-property: opacity;
+  transition-duration:0.5s;
+  transition-timing-function: ease-in-out;
+}
+.pb-blocker.active {
+  opacity: 1;
+}
+.pb-view {
+  max-width: 320px;
+  min-width: 240px;
+  min-height: 140px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: white;
+  border-radius: 6px;
+}
+.pb-message {
+  padding-top: 4px;
+}
+.pb-icon-container {
+  padding: 16px;
+}
+
+/* manage table */
+.mtbl-loading {
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition-property: opacity, visibility;
+  -webkit-transition-duration:0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-property: opacity, visibility;
+  transition-duration:0.5s;
+  transition-timing-function: ease-in-out;
+}
+.mtbl-loading.active {
+  opacity: 1;
+  visibility: visible;
+}
+.mtbl-loading-zeroheight {
+  text-align: center;
+  visibility: hidden;
+  height: 0;
+  -webkit-transition-property: height, visibility;
+  -webkit-transition-duration:0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-property: height, visibility;
+  transition-duration:0.3s;
+  transition-timing-function: ease-in-out;
+}
+.mtbl-loading-zeroheight.active {
+  height: 42px;
+  visibility: visible;
+}
+.mtbl-img-responsive {
+  height: 30px;
+  width: auto;
+}
+/* paging */
+.paging-nav {
+  padding: 5px;
+  text-align: center;
+}
+.paging-nav .more {
+
+}
+.paging-nav a {
+  display: inline-block;
+  margin: 2px;
+}
+.paging-nav a.active {
+  color: #331ab7;
+}
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+  
+  .content-container {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+/* dashboard */
+.dashboard-todo .thumbnail {
+  height: 350px;
+  overflow: hidden;
+}
+.dashboard-todo-img-wrp {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+.dashboard-todo-img-wrp img {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  height: auto;
+}
+.dashboard-todo-btns button {
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  font-size: 17px;
+  padding: 2px;
+  margin-bottom: 5px;
+}

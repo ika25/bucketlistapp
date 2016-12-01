@@ -1,0 +1,17 @@
+{
+  "name": "bucketlistapp-spa",
+  "description": "The bucket list web app made with flask and angularjs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/__FILL__",
+  "license": "GPL-2",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-resource": "1.5.x",
+    "angular-route": "1.5.x",
+    "bootstrap": "3.3.x",
+    "jquery": "2.2.x",
+    "font-awesome": "fontawesome#^4.7.0",
+    "jasny-bootstrap": "^3.1.3"
+  }
+}
