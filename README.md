@@ -77,7 +77,11 @@ import os
 os.urandom(24)
 ```
 
--  $ `export FLASK_APP=bucketlistapp.py`
+- $ `python initsql.py`
+
+For creating database schema.
+
+- $ `export FLASK_APP=bucketlistapp.py`
 
 Set Flask app envrinoment variable
 
