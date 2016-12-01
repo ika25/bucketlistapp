@@ -1,5 +1,5 @@
 'use strict';
-var httpRequestDelay = 850;
+var httpRequestDelay = 0;
 angular.module('bucketlistApp')
   .config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
