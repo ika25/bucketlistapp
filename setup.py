@@ -10,6 +10,6 @@ setup(name='bucketlistapp',
       author_email='',
       license='GPL-2',
       install_requires=[
-          'Flask', 'Flask-Testing', 'sqlalchemy', 'bcrypt', 'MySQL-python'
+          'Flask-Testing', 'Flask', 'sqlalchemy', 'bcrypt', 'MySQL-python'
       ],
       zip_safe=False)

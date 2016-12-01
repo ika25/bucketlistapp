@@ -1,11 +1,15 @@
 
+import os
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 DBCONFIG = {
   "DRIVER": "mysql",
-  "USER": "bucketlist",
-  "PASSWORD": "bucketlist",
-  "DBNAME": "bucketlist",
+  "USER": "<DBUSER>",
+  "PASSWORD": "<DBPASSWORD>",
+  "DBNAME": "<DBNAME>",
   "HOST": "localhost"
+# 'PORT' is also supported
 }
 
 SESSION_SECRET = 'A SECRET KEY (recommended to have at least 24 bytes)'

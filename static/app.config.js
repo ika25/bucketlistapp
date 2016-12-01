@@ -4,8 +4,8 @@ angular.module('bucketlistApp')
   .config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
       function mkIsLoggedIn(forLogin) {
-        return ["userService", "gui", "$location",
-          function(userService, gui, $location) {
+        return ["userService", "gui", "$location", '$q',
+          function(userService, gui, $location, $q) {
             return userService.loginCheck().then(function(success) {
               if(forLogin) {
                 if(success) {
@@ -14,6 +14,10 @@ angular.module('bucketlistApp')
               } else {
                 if(!success) {
                   $location.path('/login');
+                  // make it wait, to not render template
+                  var deferred = $q.defer();
+                  setTimeout(function() { deferred.resolve() }, 3000);
+                  return deferred.promise;
                 }
               }
               return success;
@@ -25,14 +29,14 @@ angular.module('bucketlistApp')
         var data = opts.data = opts.data || {};
         data.userPage = true;
         var resolve = opts.resolve = opts.resolve || {};
-        resolve.isLoggedIn = mkIsLoggedIn();
+        resolve.authorized = mkIsLoggedIn();
         return opts;
       }
       $routeProvider
         .when('/login', {
           template: '<login></login>',
           resolve: {
-            isLoggedIn: mkIsLoggedIn(true)
+            authorized: mkIsLoggedIn(true)
           }
         })
         .when('/', { redirectTo: '/dashboard' })
