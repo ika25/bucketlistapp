@@ -1,7 +1,8 @@
 # Bucket List Web App
 
 A central user based todo list app. It's made with help of
-Flask, Mysql, SQLAlchemy, AngularJS, bootstrap, etc.
+Flask, Mysql, SQLAlchemy, AngularJS, bootstrap, this app has login page where you can login to you personal page,
+ones you login you have dashboard,manage,new and log out table.
 
 ## Dependencies
 
