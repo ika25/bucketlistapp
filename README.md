@@ -92,3 +92,9 @@ Starts the server at port 5000. If you see no error, Web app is running there.
 
 http://localhost:5000/
 
+REFERENCE
+
+https://www.youtube.com/watch?v=M1IVwFAH9Wo
+https://www.youtube.com/watch?v=mr90d7fp3SE&t=890s
+https://www.fullstackpython.com/flask.html
+https://realpython.com/blog/python/python-web-applications-with-flask-part-i/
